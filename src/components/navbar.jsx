@@ -37,11 +37,14 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <div className='border-4 border-amber-950 flex justify-items-center'>
-        <i className='scale-150'><IoSearchOutline id='search_logo'/></i>
+      <div className='border-2 rounded-full border-amber-950 flex  justify-items-center'>
+        <i className='flex mt-1 text-[20px]'>< IoSearchOutline className='scale-125 mt-1 mx-3 ' id='search_logo'/></i>
         
-        <input className='outline-none ' ></input>     
+        <input placeholder='Search...' className='outline-none bg-transparent' />     
         
+      </div>
+      <div className='border rounded-md text-xl bg-blue-400 px-4'>
+        <button className='text-white '>Log in</button>
       </div>
     </div>
   );
