@@ -1,24 +1,22 @@
-import Navbar from './components/navbar.jsx';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/home.jsx';
-import Project from './components/project.jsx';
-import Slideshow from './components/slider.jsx';
-import './App.css';
-import AdminDashboard from './components/AdminDashboard.jsx';
+import React from 'react'
+import Home from './components/home'
+import Project from './components/project'
+import AdminDashboard from './components/AdminDashboard'
+import Slideshow from './components/slider'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-function App() {  
-
+const App = () => {
   return (
-    <>
+   
       <BrowserRouter>
-      <Navbar/>
         <Routes>  
           <Route exact path="/" element={<Home/>} />
           <Route path="/project" element={<Project/>} />
+          <Route path='/Dashboard' element={<AdminDashboard/>}/>
+          <Route path="/project" element={<Slideshow/>} />
         </Routes>
       </BrowserRouter>
-    </>
-  );
+  )
 }
 
-export default App;
+export default App

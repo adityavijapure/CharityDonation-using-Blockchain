@@ -1,5 +1,5 @@
 import React from 'react';
-import CardDetitle from '../constant';
+import CardDetitle from '../contast';
 
 const Cards = () => {
   return (

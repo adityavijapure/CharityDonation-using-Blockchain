@@ -1,11 +1,13 @@
 import React from "react";
-import FilterTab from "./FilterTab";
+// import FilterTab from "./FilterTab";
 import CardSection from "./CardSection";
+import Navbar from "./navbar";
 
 const Project = () => {
     return (
       <div>
-      <FilterTab/>
+      {/* <FilterTab/> */}
+      <Navbar/>
       <CardSection/>
       </div>
     )
