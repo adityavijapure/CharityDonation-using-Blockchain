@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {img} from '../assets/search.png';
-
+import { IoSearchOutline } from "react-icons/io5";
+import '../styles/style.css';
 const Navbar = () => {
   return (
-    <div className='w-full border rounded-xl flex p-4 justify-evenly '>
-      <div className="text-start text-2xl flex-1 flex-col gap-4 mb-4">
+    <div className=' mx-14 my-7 border rounded-xl flex p-4 justify-evenly '>
+      <div className="text-start text-2xl  flex-col gap-4 mb-4">
         <h2 className="h-5">Logo 1</h2>
       </div>
       <nav className='aline '>
@@ -32,14 +32,16 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/contact" className="hover:text-black transition duration-300">
-              Contact
+              News & Updates
             </Link>
           </li>
         </ul>
       </nav>
-      <div className='border-4 border-amber-950'>
-        <img src={img} alt="search" />
-        <input className='outline-none ' />
+      <div className='border-4 border-amber-950 flex justify-items-center'>
+        <i className='scale-150'><IoSearchOutline id='search_logo'/></i>
+        
+        <input className='outline-none ' ></input>     
+        
       </div>
     </div>
   );
