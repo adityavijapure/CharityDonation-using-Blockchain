@@ -1,17 +1,16 @@
 import React from 'react';
-import img from '../assets/card1.jpg';
-import CardDetitle from '../contast.jsx';
+import CardDetitle from '../constant';
 
 const Cards = () => {
   return (
-    <div className="flex flex-wrap justify-center gap-8 p-8 ">
+    <div className="flex  flex-wrap justify-center  gap-8  p-4  ">
       {CardDetitle.map((item, index) => (
         <div
           key={index}
-          className="w-[600px] bg-white shadow-lg rounded-2xl flex overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
+          className="w-[550px] bg-white shadow-lg rounded-2xl flex overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
         >
           <div className="w-[250px]">
-            <img src={img} alt="cardImg" className="w-full h-full object-cover" />
+            <img src="https://i.pinimg.com/564x/9f/8b/aa/9f8baa6737c714a02f723c8f1ca8eb7a.jpg" alt="cardImg" className="w-full h-full object-cover" />
           </div>
           <div className="w-[350px] p-6 flex flex-col justify-between">
             <div>
@@ -42,7 +41,7 @@ const Cards = () => {
                   Discover More
                 </button>
                 <button className="w-full h-10 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition-colors">
-                  Start Investing
+                  Start Donating
                 </button>
               </div>
             </div>
