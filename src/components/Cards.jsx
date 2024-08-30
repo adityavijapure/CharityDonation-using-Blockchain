@@ -10,7 +10,7 @@ const Cards = () => {
           className="w-[550px] bg-white shadow-lg rounded-2xl flex overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
         >
           <div className="w-[250px]">
-            <img src="https://i.pinimg.com/564x/9f/8b/aa/9f8baa6737c714a02f723c8f1ca8eb7a.jpg" alt="cardImg" className="w-full h-full object-cover" />
+            <img src="https://i.pinimg.com/564x/9f/8b/aa/9f8baa6737c714a02f723c8f1ca8eb7a.jpg" alt="cardImg" className="w-full h-full  object-cover" />
           </div>
           <div className="w-[350px] p-6 flex flex-col justify-between">
             <div>
