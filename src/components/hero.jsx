@@ -1,36 +1,29 @@
-import React from 'react';  
+import React from 'react';
+import { FaPlay } from "react-icons/fa";
+
 
 const Hero = () => {
   return (
-    <div className='border-2 rounded-xl h-1/2  mx-4 md:mx-14 flex flex-col md:flex-row p-4 items-center'>
-      <div className='flex flex-col items-center md:items-start w-full md:w-1/2'>
-        <div className='w-full md:w-[600px] object-contain bg-red-500 flex items-center justify-center'>
-          <h2 className='text-white text-2xl md:text-4xl font-bold'>Donate Happy</h2>
-        </div>
-        <div className='flex flex-col h-full md:flex-row mt-4'>
-          <div className='md:mr-2'>
-            <img
-              src="https://www.investopedia.com/thmb/SlThGdKuU_d6tVNShcUYodua0cM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1173117669-baa23a3889054f828aebc58f9de136b6.jpg"
-              alt="Charitable donation"
-              className='w-full h-auto object-cover'
-            />
-          </div>
-          <div className='md:ml-2 mt-2 md:mt-0'>
-            <img
-              src="https://www.investopedia.com/thmb/SlThGdKuU_d6tVNShcUYodua0cM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1173117669-baa23a3889054f828aebc58f9de136b6.jpg"
-              alt="Supporting community"
-              className='w-full h-auto object-cover'
-            />
-          </div>
-        </div>
+    <div className=' h-1/2  mx-4 md:mx-14 flex flex-col md:flex-row p-5 items-center'>
+      <div className='items-center relative ps-3 '>
+        <h1 className='text-7xl font-bold justify-center text-center text-gray-900 '>Chain Donation</h1>
+        <h1 className='text-4xl font-bold justify-center text-center text-gray-900'>Fundraising for people and causes you care.</h1>
+        <p className='text-lg text-gray-600 w-[600px]'>Donate to charity and help make a difference.Donate to charity and help make a difference.Donate to charity and help make a difference.</p>
+        <div className='flex mx-10 mt-10 '>
+        <div className='border-solid px-5 py-3 rounded w-fit bg-orange-400'>
+
+        <button className='text-white'>Donate Now</button>
       </div>
-      
-      
-      <div className='w-full md:w-1/2 mt-4 md:mt-0 p-4'>
+        <div className='flex flex-wrap mt-3 mx-4'><i className='mt-1 mx-2'><FaPlay /></i><p>How it works</p></div>
+      </div>
+      </div>
+     
+
+      <div className='h-[78vh] md:w-1/2 mt-4 md:mt-0 p-4 relative'>
         <img
           src="https://i.pinimg.com/564x/8b/22/38/8b2238237939efc6a7ac4b31c2a90bd5.jpg"
           alt="Inspiring image"
-          className='w-full h-auto object-cover'
+          className='h-[78vh] w-[37vw] object-fit object-scale-down rounded-lg'
         />
       </div>
     </div>
