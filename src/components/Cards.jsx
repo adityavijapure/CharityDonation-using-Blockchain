@@ -1,5 +1,4 @@
 import React from 'react';
-import img from '../assets/card1.jpg';
 import CardDetitle from '../contast.jsx';
 
 const Cards = () => {
@@ -11,7 +10,7 @@ const Cards = () => {
           className="w-[600px] bg-white shadow-lg rounded-2xl flex overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
         >
           <div className="w-[250px]">
-            <img src={img} alt="cardImg" className="w-full h-full object-cover" />
+            <img src="https://www.wpcharitable.com/wp-content/uploads/2022/02/FeaturedImageForCharitable-wordpress-donation-button.png" alt="cardImg" className="w-full h-full object-cover" />
           </div>
           <div className="w-[350px] p-6 flex flex-col justify-between">
             <div>

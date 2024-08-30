@@ -4,7 +4,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import '../styles/style.css';
 const Navbar = () => {
   return (
-    <div className=' mx-14 my-7 border rounded-xl flex p-4 justify-evenly '>
+    <div className=' mx-14 my-7 flex p-4 justify-evenly '>
       <div className="text-start text-2xl  flex-col gap-4 mb-4">
         <h2 className="h-5">Logo 1</h2>
       </div>
