@@ -36,7 +36,15 @@ const NavButton = () => {
                <i>
                 <IoMdPersonAdd />
                </i>
-               <a href='#' >Add Charity</a>
+               <a >Add Charity</a>
+            </li>
+            </Link>
+            <Link to ='/news' className='Link'>
+            <li>
+               <i>
+                <IoMdPersonAdd />
+               </i>
+               <a href='#' >Add News Blog</a>
             </li>
             </Link>
             <Link to ='/' className='Link'> 

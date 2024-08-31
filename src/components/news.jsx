@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { db, storage } from '../firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import NavButton from './NavButton';
 
 const AddNewsBlog = () => {
   const [newsData, setNewsData] = useState({
@@ -73,7 +74,12 @@ const AddNewsBlog = () => {
   
 
   return (
-    <div className="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md">
+    <>
+
+    <div className='flex '>
+        <NavButton/>
+    
+    <div className="max-w-md mx-auto p-4 mt-32 bg-white rounded-lg shadow-md">
       <h1 className="text-3xl font-bold mb-4">Add a News Blog</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -131,6 +137,8 @@ const AddNewsBlog = () => {
         </button>
       </form>
     </div>
+    </div>
+    </>
   );
 };
 

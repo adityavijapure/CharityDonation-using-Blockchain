@@ -6,8 +6,9 @@ import CountPage from './components/CountPage'
 import Slideshow from './components/slider'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavButton from './components/NavButton'
-import AddCharity from './components/addCharit'
+import AddCharity from './components/AddCharit'
 import Contact from './components/contact'
+import AddNewsBlog from './components/news'
 
 const App = () => {
   const [onDashboard,setDashboard] =useState(false);
@@ -19,7 +20,9 @@ const App = () => {
            <Route exact path="/" element={<Home/>} />
           <Route path="/project" element={<Project/>} />
           <Route path="/dashboard" element={<AdminDashboard setDashboard={setDashboard}/>} />
-          <Route path='/charit' element={<AddCharity/>} />
+          <Route path='/addCharity' element={<AddCharity/>} />
+          <Route path='/news' element={<AddNewsBlog/>} />
+
         </Routes>
       </BrowserRouter>
       </div>
