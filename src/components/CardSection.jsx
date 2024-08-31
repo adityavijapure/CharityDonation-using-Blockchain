@@ -16,11 +16,11 @@ const CardSection = () => {
           return;
         }
 
-        // Use BrowserProvider instead of Web3Provider
+        
         const provider = new ethers.BrowserProvider(window.ethereum);
         const contract = new ethers.Contract(contractAddress, contractABI, provider);
 
-        // Fetch number of charities
+        
         const numberOfCharities = await contract.getNumberOfCharities();
         const charityArray = [];
 

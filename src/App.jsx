@@ -5,7 +5,10 @@ import AdminDashboard from './components/AdminDashboard'
 import Slideshow from './components/slider'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavButton from './components/NavButton'
-import AddCharity from './components/addCharit'
+import AddCharity from './components/AddCharit'
+import AddNews from './components/news'
+
+
 
 const App = () => {
   const [onDashboard,setDashboard] =useState(false);
@@ -18,6 +21,7 @@ const App = () => {
           <Route path="/project" element={<Project/>} />
           <Route path="/dashboard" element={<AdminDashboard setDashboard={setDashboard}/>} />
           <Route path='/charit' element={<AddCharity/>} />
+          <Route path='/news' element={<AddNews/>} />
         </Routes>
       </BrowserRouter>
       </div>
