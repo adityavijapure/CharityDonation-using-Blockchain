@@ -6,6 +6,8 @@ import Slideshow from './components/slider'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavButton from './components/NavButton'
 import AddCharity from './components/addCharit'
+import UpdateProfile from './components/UpdateProfile'
+
 
 const App = () => {
   const [onDashboard,setDashboard] =useState(false);
@@ -18,6 +20,7 @@ const App = () => {
           <Route path="/project" element={<Project/>} />
           <Route path="/dashboard" element={<AdminDashboard setDashboard={setDashboard}/>} />
           <Route path='/charit' element={<AddCharity/>} />
+          <Route path='/UpdateProfile' element={<UpdateProfile/>}/>
         </Routes>
       </BrowserRouter>
       </div>
