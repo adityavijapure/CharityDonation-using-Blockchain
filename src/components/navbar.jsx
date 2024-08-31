@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IoSearchOutline } from "react-icons/io5";
 import '../styles/style.css';
 const Navbar = () => {
   return (
    <nav className=" text-[22px]">
-    <div className="flex  justify-evenly">
+    <div className="flex ">
       <Link to="/" className="logo">Chain Donation</Link>
       <ul className="flex gap-5">
         <li><Link to="/">Home</Link></li>
