@@ -31,16 +31,23 @@ const AddCharity = () => {
       
       await window.ethereum.request({ method: 'eth_requestAccounts' });
   
+      // Create a provider and signer
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
   
+      // Create a contract instance
       const contract = new ethers.Contract(contractAddress, contractABI, signer);
+  
+      // Check if addCharity is available
       if (!contract.addCharity) {
         throw new Error('addCharity method is not available in the contract.');
       }
   
+      // Parse units
       const goalInUnits = ethers.parseUnits(charityData.goal, 'ether');
       const minInUnits = ethers.parseUnits(charityData.min, 'ether');
+  
+      // Send transaction
       const transaction = await contract.addCharity(
         charityData.name,
         charityData.description,
@@ -58,14 +65,14 @@ const AddCharity = () => {
   
 
   return (
-    <div className='flex'>
+    <div className='flex '>
       <div>
         <NavButton />
       </div>
-      <div>
+      <div className='mt-24 '>
         <h1>Add a Charity</h1>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='flex'>
           <label htmlFor="name">Charity Name:</label>
           <input type="text" id="name" name="name" value={charityData.name} onChange={handleChange} required />
 
