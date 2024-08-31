@@ -26,7 +26,7 @@ const CardSection = () => {
 
         // Iterate over each charity and fetch its details
         for (let i = 0; i < numberOfCharities.toNumber(); i++) {
-          const charity = await contract.getCharity(i); // Ensure correct method name
+          const charity = await contract.getCharity(i); 
           
           // Handle case where charity properties might be undefined
           charityArray.push({
@@ -51,7 +51,7 @@ const CardSection = () => {
   }, []);
 
   return (
-    <div className='mx-14 mt-10'>
+    <div className='mx-14 mt-10 h-screen'>
       <Cards cardData={charities} />
     </div>
   );

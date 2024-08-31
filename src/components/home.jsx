@@ -1,6 +1,8 @@
 import React from 'react'
 import Hero from './hero'
 import Navbar from './navbar'
+import CountPage from './CountPage'
+import Footer from './footer'
 
 const home = () => {
   return (
@@ -8,6 +10,8 @@ const home = () => {
    <div>
    <Navbar/>
    <Hero/>
+   <CountPage />
+   <Footer/>
    </div>
    </>
   )
