@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavButton from './components/NavButton'
 import AddCharity from './components/addCharit'
 import Contact from './components/contact'
+import Blog from './components/blog'
 
 const App = () => {
   const [onDashboard,setDashboard] =useState(false);
@@ -22,7 +23,7 @@ const App = () => {
           <Route path="/Charit" element={<AddCharity/>} /> 
           <Route path='/Dashboard' element={<AdminDashboard/>}/>
           <Route path='/Contact' element={<Contact/>}/>
-          
+          <Route path='/blog' element={<Blog/>}/>
           
         </Routes>
       </BrowserRouter>
