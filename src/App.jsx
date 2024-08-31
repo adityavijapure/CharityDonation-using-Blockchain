@@ -6,26 +6,26 @@ import CountPage from './components/CountPage'
 import LoginSing from './components/loginSing'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import UpdateProfile from './components/UpdateProfile'
-import AddCharity from './components/addCharit'
 import Contact from './components/contact'
 import Blog from './components/blog'
+import ProjectList from './components/ProjectList'
+import DonationTable from './components/DonationTable'
 
 const App = () => {
-  const [onDashboard,setDashboard] =useState(false);
   return (
     <div className=''>
       <BrowserRouter>
-      {/* <NavButton/> */}
+
         <Routes>  
            <Route exact path="/" element={<Home/>} />
           <Route path="/project" element={<Project/>} />
           <Route path='/Countpage' element={<CountPage/>}/>
-          <Route path="/Charit" element={<AddCharity/>} /> 
+          <Route path="/Charity" element={<ProjectList/>} /> 
+          <Route path="/DonationTable" element={<DonationTable/>} /> 
           <Route path='/Contact' element={<Contact/>}/>
           <Route path='/blog' element={<Blog/>}/>
           
-          <Route path="/dashboard" element={<AdminDashboard setDashboard={setDashboard}/>} />
-          {/* <Route path='/blog' element={</>} /> */}
+          <Route path="/dashboard" element={<AdminDashboard/>} />
              
           <Route path='/login' element={<LoginSing/>}/>
           <Route path='/UpdateProfile' element={<UpdateProfile/>}/>
