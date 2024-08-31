@@ -9,12 +9,8 @@ const Cards = () => {
           key={index}
           className="w-full sm:w-[400px] md:w-[550px] bg-white shadow-lg rounded-2xl flex flex-col md:flex-row overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl"
         >
-          <div className="w-full h-48 md:w-[250px] md:h-auto">
-            <img
-              src="https://i.pinimg.com/564x/9f/8b/aa/9f8baa6737c714a02f723c8f1ca8eb7a.jpg"
-              alt="cardImg"
-              className="w-full h-full object-cover"
-            />
+          <div className="w-[250px]">
+            <img src="https://i.pinimg.com/564x/9f/8b/aa/9f8baa6737c714a02f723c8f1ca8eb7a.jpg" alt="cardImg" className="w-full h-full  object-cover" />
           </div>
           <div className="p-4 md:w-[300px] flex flex-col justify-between">
             <div>

@@ -10,8 +10,9 @@ import AddCharity from './components/addCharit'
 const App = () => {
   const [onDashboard,setDashboard] =useState(false);
   return (
-    <div className='flex'>
+    <div className=''>
       <BrowserRouter>
+<<<<<<< HEAD
       {/* <NavButton/> */}
         <Routes>  
            <Route exact path="/" element={<Home/>} />
@@ -21,6 +22,14 @@ const App = () => {
          {/* <Route path='/Dashboard' element={<AdminDashboard/>}/> */}
           {/* <Route path='/' element={<InputGroup8Presentation/>}/> */}
           
+=======
+      
+        <Routes>  
+          <Route exact path="/" element={<Home/>} />
+          <Route path="/project" element={<Project/>} />
+          <Route path="/dashboard" element={<AdminDashboard setDashboard={setDashboard}/>} />
+          <Route path='/charit' element={<AddCharity/>} />
+>>>>>>> d00909c8db90f64ffd527bd7c9d2bb3803c79756
         </Routes>
       </BrowserRouter>
       </div>

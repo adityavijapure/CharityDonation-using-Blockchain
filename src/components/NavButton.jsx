@@ -1,12 +1,9 @@
 import React from "react";
 import logo from "../assets/logo.png";
-import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
 import { IoMdPersonAdd } from "react-icons/io";
 import { FaPen } from "react-icons/fa";
-import { RiAdminFill } from "react-icons/ri";
-import { GrUserAdmin } from "react-icons/gr";
 import '../styles/style.css'
 import { BiLeftArrowAlt } from "react-icons/bi";
 const NavButton = () => {
