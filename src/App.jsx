@@ -5,15 +5,10 @@ import AdminDashboard from './components/AdminDashboard'
 import CountPage from './components/CountPage'
 import LoginSing from './components/loginSing'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import NavButton from './components/NavButton'
+import UpdateProfile from './components/UpdateProfile'
 import AddCharity from './components/addCharit'
 import Contact from './components/contact'
-<<<<<<< HEAD
 import Blog from './components/blog'
-=======
-import UpdateProfile from './components/UpdateProfile'
-
->>>>>>> e21bb6c2a6e184b93476a1d9a3f22e7ff9f751e7
 
 const App = () => {
   const [onDashboard,setDashboard] =useState(false);

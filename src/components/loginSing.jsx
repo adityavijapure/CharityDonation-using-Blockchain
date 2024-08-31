@@ -19,12 +19,11 @@ const LoginSign = () => {
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
-    // Handle login form submission here
+    
   };
 
   const handleSignUpSubmit = (event) => {
     event.preventDefault();
-    // Handle sign-up form submission here
   };
 
   return (
@@ -32,7 +31,6 @@ const LoginSign = () => {
       <span className="rotate-bg" />
       <span className="rotate-bg2" />
 
-      {/* Login Form */}
       <div className="form-box login">
         <h2
           className="title animation"
@@ -78,7 +76,6 @@ const LoginSign = () => {
         </form>
       </div>
 
-      {/* Info Text for Login */}
       <div className="info-text login">
         <h2 className="animation" style={{ '--i': '0', '--j': '20' }}>
           Welcome Back!
@@ -88,7 +85,6 @@ const LoginSign = () => {
         </p>
       </div>
 
-      {/* Sign-Up Form */}
       <div className="form-box register">
         <h2 className="title animation" style={{ '--i': '17', '--j': '0' }}>
           Sign Up
@@ -127,7 +123,6 @@ const LoginSign = () => {
         </form>
       </div>
 
-      {/* Info Text for Sign-Up */}
       <div className="info-text register">
         <h2 className="animation" style={{ '--i': '17', '--j': '0' }}>
           Welcome Back!
