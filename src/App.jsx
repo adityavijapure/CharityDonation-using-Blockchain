@@ -12,14 +12,14 @@ const App = () => {
   return (
     <div className='flex'>
       <BrowserRouter>
-      <NavButton/>
+      {/* <NavButton/> */}
         <Routes>  
-          {/* <Route exact path="/" element={<Home/>} />
+           <Route exact path="/" element={<Home/>} />
           <Route path="/project" element={<Project/>} />
           
-          <Route path="/project" element={<Slideshow/>} /> */}
-<Route path='/Dashboard' element={<AdminDashboard/>}/>
-          <Route path='/' element={<InputGroup8Presentation/>}/>
+          {/* <Route path="/project" element={<Slideshow/>} />  */}
+         {/* <Route path='/Dashboard' element={<AdminDashboard/>}/> */}
+          {/* <Route path='/' element={<InputGroup8Presentation/>}/> */}
           
         </Routes>
       </BrowserRouter>
