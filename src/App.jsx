@@ -3,7 +3,7 @@ import Home from './components/home'
 import Project from './components/project'
 import AdminDashboard from './components/AdminDashboard'
 import CountPage from './components/CountPage'
-import Slideshow from './components/slider'
+import LoginSing from './components/loginSing'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavButton from './components/NavButton'
 import AddCharity from './components/addCharit'
@@ -26,7 +26,9 @@ const App = () => {
           
           
           <Route path="/dashboard" element={<AdminDashboard setDashboard={setDashboard}/>} />
-          <Route path='/blog' element={</>} />
+          {/* <Route path='/blog' element={</>} /> */}
+             
+          <Route path='/login' element={<LoginSing/>}/>
           <Route path='/UpdateProfile' element={<UpdateProfile/>}/>
         </Routes>
       </BrowserRouter>

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Navbar from './navbar';
 
+
 const Contact = () => {
   const [open, setOpen] = useState(false);
   const form = useRef();
@@ -32,30 +33,65 @@ const Contact = () => {
 
   return (
     <>
-    <div><Navbar/></div>
-    <div className="flex justify-center items-center -pt-8">
-        <div className='w-fit content-start'>
-            <img className='ms-8 h-fit w-fit scale-90' src="https://img.freepik.com/free-vector/computer-with-online-charity-donation_24877-54509.jpg?t=st=1725093545~exp=1725097145~hmac=6639c670826495a0252ab2389c472797419b9594a35f98154e339bfdfbdd9e3d&w=740" alt="Donation image" />
+      <Navbar />
+      <div className="flex flex-col lg:flex-row justify-center items-center min-h-screen bg-gray-100 p-8">
+        <div className="lg:w-1/2 flex justify-center lg:justify-start mb-8 lg:mb-0">
+          <img
+            className="max-w-full h-auto rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500 ease-in-out"
+            src="https://img.freepik.com/free-vector/computer-with-online-charity-donation_24877-54509.jpg?t=st=1725093545~exp=1725097145~hmac=6639c670826495a0252ab2389c472797419b9594a35f98154e339bfdfbdd9e3d&w=740"
+            alt="Donation image"
+          />
         </div>
-      <div className="max-w-4xl mx-auto p-4 md:p-6 lg:p-8">
-        
-        <form ref={form} onSubmit={onSubmit} className="w-full max-w-lg max-h-fit mx-auto p-4 md:p-6 lg:p-8 bg-white rounded-lg shadow-lg">
-          <h2 className="text-4xl font-bold text-center mb-2">Contact</h2>
-        <p className="text-lg text-center mb-4">Feel free to reach out to me for any questions or opportunities!</p>
-          <h3 className="text-2xl font-bold mb-2">Contact Us 🚀</h3>
-          <input type="email" placeholder="Your Email" name="from_email" className="w-full p-2 my-2 pl-10 text-lg border border-gray-200 rounded-lg focus:outline-none focus:ring focus:border-blue-500" />
-          <input type="text" placeholder="Your Name" name="from_name" className="w-full p-2 my-2 pl-10 text-lg border border-gray-200 rounded-lg focus:outline-none focus:ring focus:border-blue-500" />
-          <input type="text" placeholder="Subject" name="subject" className="w-full p-2 pl-10 my-2 text-lg border border-gray-200 rounded-lg focus:outline-none focus:ring focus:border-blue-500" />
-          <textarea placeholder="Message" rows="4" name="message" className="w-full p-2 pl-10 my-2   text-lg border border-gray-200 rounded-lg focus:outline-none focus:ring focus:border-blue-500" />
-          <button type="submit" className="w-full p-2 text-lg bg-blue-500 hover:bg-blue-700 text-white rounded-lg focus:outline-none focus:ring">Send</button>
-        </form>
-        {open && (
-          <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-            <span className="block sm:inline">Email sent successfully!</span>
-          </div>
-        )}
+        <div className="w-full max-w-lg lg:w-1/2 bg-white p-8 rounded-lg shadow-lg animate-fade-in">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-6 animate-slide-down">Contact</h2>
+          <p className="text-lg text-center text-gray-600 mb-8 animate-slide-down">Feel free to reach out to me for any questions or opportunities!</p>
+          <form ref={form} onSubmit={onSubmit} className="space-y-4">
+            <div className="relative">
+              <input
+                type="email"
+                placeholder="Your Email"
+                name="from_email"
+                className="w-full p-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transform transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Your Name"
+                name="from_name"
+                className="w-full p-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transform transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Subject"
+                name="subject"
+                className="w-full p-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transform transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="relative">
+              <textarea
+                placeholder="Message"
+                rows="4"
+                name="message"
+                className="w-full p-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transform transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full py-3 text-lg bg-blue-600 hover:bg-blue-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-transform duration-500 hover:scale-105"
+            >
+              Send
+            </button>
+          </form>
+          {open && (
+            <div className="mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative animate-slide-up" role="alert">
+              <span className="block sm:inline">Email sent successfully!</span>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
     </>
   );
 };
