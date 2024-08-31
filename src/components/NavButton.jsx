@@ -23,7 +23,7 @@ const NavButton = () => {
                <a >Dashboard</a>
             </li>
         </Link>
-        <Link to ='/updateProfile' className='Link'>
+        <Link to ='/UpdateProfile' className='Link'>
             <li>
                <i>
                 <FaPen />
@@ -32,6 +32,14 @@ const NavButton = () => {
             </li>
         </Link>
         <Link to ='/addCharity' className='Link'>
+            <li>
+               <i>
+                <IoMdPersonAdd />
+               </i>
+               <a href='#' >Add Charity</a>
+            </li>
+            </Link>
+            <Link to ='/blog' className='Link'>
             <li>
                <i>
                 <IoMdPersonAdd />

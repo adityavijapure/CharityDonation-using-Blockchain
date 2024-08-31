@@ -1,29 +1,33 @@
-import React from "react";
-import Navbar from "./navbar";
+import React from 'react';
+import Tumblr from '../assets/videoplayback.mp4';
+import Tumblr1 from '../assets/videoplayback1.mp4';
 
-const CountPage = () => {
-  return (
-    <div>
-      <div>
-        <Navbar />
-      </div>
-      <div className="grid grid-cols-2">
-        <div className="mx-16 my-12 justify-center">
-          <img
-          className="h-[55vh] w-fit"
-            src="https://tse1.mm.bing.net/th?id=OIP.xyp6_qqVBldF4LqQNp0MYQHaFj&pid=Api&P=0&h=220"
-            alt="Donation image"
-          /> 
-        </div>
-        <div className="mx-16 my-12 justify-center">
-            <h1 className="font-bold text-justify text-6xl my-20 ">CHARITY DONATION</h1>
-        </div>
-      </div>
-      <div>
-        <h1>Count Page</h1>
-      </div>
+const VideoSection = ({ videoSrc, isReversed,text }) => (
+  <div className={`flex flex-col md:flex-row items-center justify-between my-8 px-4 md:px-14 ${isReversed ? 'md:flex-row-reverse' : ''}`}>
+    <video
+      width="100%"
+      className="md:w-1/2 hover:scale-105  transition-transform duration-300  rounded-lg shadow-lg"
+      preload="auto"
+      playsInline
+      autoPlay
+      loop
+      muted
+    >
+      <source src={videoSrc} type="video/mp4" />
+       video tag.
+    </video>
+    <div className="mt-6 md:mt-0 md:mx-8 text-2xl md:text-4xl font-semibold font-xyz uppercase text-center md:text-left">
+      {text}
     </div>
-  );
-};
+  </div>
+);
+
+const CountPage = () => (
+  <>
+    <VideoSection videoSrc={Tumblr} text={"No one has ever become poor from giving."} />
+    <VideoSection videoSrc={Tumblr1} isReversed text={"No one has ever become poor from giving."} />
+  </>
+);
 
 export default CountPage;
+

@@ -31,22 +31,23 @@ const AddCharity = () => {
       
       await window.ethereum.request({ method: 'eth_requestAccounts' });
   
-      
+      // Create a provider and signer
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
   
-      
+      // Create a contract instance
       const contract = new ethers.Contract(contractAddress, contractABI, signer);
   
-    
+      // Check if addCharity is available
       if (!contract.addCharity) {
         throw new Error('addCharity method is not available in the contract.');
       }
   
-      
+      // Parse units
       const goalInUnits = ethers.parseUnits(charityData.goal, 'ether');
       const minInUnits = ethers.parseUnits(charityData.min, 'ether');
   
+      // Send transaction
       const transaction = await contract.addCharity(
         charityData.name,
         charityData.description,
@@ -54,10 +55,7 @@ const AddCharity = () => {
         minInUnits
       );
   
-      // Wait for transaction confirmation
       await transaction.wait();
-  
-      // Alert user
       alert('Charity added successfully!');
     } catch (error) {
       console.error('Error adding charity:', error);

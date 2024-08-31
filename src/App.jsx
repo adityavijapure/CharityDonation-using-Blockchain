@@ -8,7 +8,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavButton from './components/NavButton'
 import AddCharity from './components/addCharit'
 import Contact from './components/contact'
+<<<<<<< HEAD
 import Blog from './components/blog'
+=======
+import UpdateProfile from './components/UpdateProfile'
+
+>>>>>>> e21bb6c2a6e184b93476a1d9a3f22e7ff9f751e7
 
 const App = () => {
   const [onDashboard,setDashboard] =useState(false);
@@ -21,10 +26,12 @@ const App = () => {
           <Route path="/project" element={<Project/>} />
           <Route path='/Countpage' element={<CountPage/>}/>
           <Route path="/Charit" element={<AddCharity/>} /> 
-          <Route path='/Dashboard' element={<AdminDashboard/>}/>
           <Route path='/Contact' element={<Contact/>}/>
           <Route path='/blog' element={<Blog/>}/>
           
+          <Route path="/dashboard" element={<AdminDashboard setDashboard={setDashboard}/>} />
+          <Route path='/blog' element={</>} />
+          <Route path='/UpdateProfile' element={<UpdateProfile/>}/>
         </Routes>
       </BrowserRouter>
       </div>
