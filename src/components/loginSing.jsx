@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
+import {  useNavigate } from 'react-router-dom'; 
 import { auth } from '../firebase'; // Adjust the import path according to your project structure
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import '../styles/loginsign.css';
 
 const LoginSign = () => {
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const wrapper = document.querySelector('.wrapper');
@@ -29,6 +31,7 @@ const LoginSign = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert("Login successful!");
+      navigate('/');
     } catch (error) {
       console.error("Error logging in: ", error);
       alert("Failed to log in. Please check your credentials.");
