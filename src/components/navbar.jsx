@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   const handleProfileClick = () => {
-    navigate('/profile'); // Navigate to the profile page (if you have a profile page)
+    navigate('/dashboard'); // Navigate to the profile page (if you have a profile page)
   };
 
   return (
@@ -59,7 +59,7 @@ const Navbar = () => {
           Login
         </button>
         <button 
-          onClick={handleProfileClick} // Update this function if needed
+          onClick={handleProfileClick} 
           className="bg-blue-500 text-white px-4 py-2 rounded-full font-bold hover:bg-blue-600 transition duration-300"
           aria-label="Profile"
         >

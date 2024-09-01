@@ -10,7 +10,7 @@ const NavButton = () => {
       <li className="p-4 hover:bg-gray-700"><a href="/dashboard">Overview</a></li>
       <li className="p-4 hover:bg-gray-700"><a href="/DonationTable">Donations</a></li>
       <li className="p-4 hover:bg-gray-700"><a href="/Charity">Projects</a></li>
-      <li className="p-4 hover:bg-gray-700"><a href="#">Back Website</a></li>
+      <li className="p-4 hover:bg-gray-700"><a href="/">Back Website</a></li>
     </ul>
   </div>
   );
