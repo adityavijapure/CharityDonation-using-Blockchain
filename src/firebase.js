@@ -18,4 +18,4 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 const storage = getStorage(app); // Initialize Firebase Storage
 
-export { db, collection, addDoc, storage };
+export { db, collection, addDoc, storage , auth};

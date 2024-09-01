@@ -1,26 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './navbar';
-import img from '../assets/avatar.jpg';
+import { db } from '../firebase'; // Adjust import path according to your project structure
+import { collection, getDocs } from 'firebase/firestore';
+import defaultImg from '../assets/avatar.jpg'; // Import the default image
 
 const Blog = () => {
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'newsBlogs'));
+        const newsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setNews(newsData);
+      } catch (error) {
+        console.error('Error fetching news: ', error);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
+      <Navbar />
       <div className="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
-          {Array(6).fill().map((_, index) => (
-            <div key={index} className="flex flex-col items-center justify-center w-full border p-4 rounded-xl">
-              <div className="flex justify-center items-center relative">
-                <div className="h-full w-full flex justify-center items-center">
-                  <img src={img} alt="news img" className="object-fit h-48 w-48" />
-                </div>
-                <div className="flex flex-col ms-7 text-start">
-                  <h3 className="font-bold text-start mt-3 text-3xl">here is heading</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore nulla nisi et fuga voluptas repellendus praesentium nam dolores, numquam, natus provident pariatur sed, assumenda quas iure temporibus quos nihil.</p>
-                  <button className="cursor-pointer text-blue-500 hover:text-blue-800">see more...</button>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {news.map((item) => (
+            <div key={item.id} className="flex flex-col bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden">
+              <div className="relative w-full h-48">
+                <img 
+                  src={item.imageUrl || defaultImg} // Use default image when imageUrl is not available
+                  alt="news img"
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-xl font-bold mb-2">{item.title || 'No Title'}</h3>
+                <p className="text-gray-700 mb-4">{item.description || 'No description available.'}</p>
+                <button className="bg-blue-500 text-white px-4 py-2 rounded-full font-bold hover:bg-blue-600 transition duration-300">
+                  See more...
+                </button>
               </div>
             </div>
           ))}

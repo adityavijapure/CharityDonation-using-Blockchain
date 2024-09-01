@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { auth } from '../firebase'; // Adjust the import path according to your project structure
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import '../styles/loginsign.css';
 
 const LoginSign = () => {
@@ -8,22 +10,45 @@ const LoginSign = () => {
     const registerLink = document.querySelector('.register-link');
     const loginLink = document.querySelector('.login-link');
 
-    registerLink.onclick = () => {
-      wrapper.classList.add('active');
-    }
+    if (registerLink && loginLink) {
+      registerLink.onclick = () => {
+        wrapper.classList.add('active');
+      }
 
-    loginLink.onclick = () => {
-      wrapper.classList.remove('active');
+      loginLink.onclick = () => {
+        wrapper.classList.remove('active');
+      }
     }
   }, []);
 
-  const handleLoginSubmit = (event) => {
+  const handleLoginSubmit = async (event) => {
     event.preventDefault();
-    
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      alert("Login successful!");
+    } catch (error) {
+      console.error("Error logging in: ", error);
+      alert("Failed to log in. Please check your credentials.");
+    }
   };
 
-  const handleSignUpSubmit = (event) => {
+  const handleSignUpSubmit = async (event) => {
     event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    console.log(email, password);
+
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert("Registration successful!");
+    } catch (error) {
+      console.error("Error registering: ", error);
+      alert("Failed to register. Please try again.");
+    }
   };
 
   return (
@@ -43,16 +68,16 @@ const LoginSign = () => {
             className="input-box animation"
             style={{ '--i': '1', '--j': '22' }}
           >
-            <input required type="text" />
-            <label htmlFor="">Username</label>
+            <input name="email" required type="email" />
+            <label htmlFor="email">Email</label>
             <i className="bx bxs-user" />
           </div>
           <div
             className="input-box animation"
             style={{ '--i': '2', '--j': '23' }}
           >
-            <input required type="password" />
-            <label htmlFor="">Password</label>
+            <input name="password" required type="password" />
+            <label htmlFor="password">Password</label>
             <i className="bx bxs-lock-alt" />
           </div>
           <button
@@ -91,18 +116,13 @@ const LoginSign = () => {
         </h2>
         <form onSubmit={handleSignUpSubmit}>
           <div className="input-box animation" style={{ '--i': '18', '--j': '1' }}>
-            <input required type="text" />
-            <label htmlFor="">Username</label>
-            <i className="bx bxs-user" />
-          </div>
-          <div className="input-box animation" style={{ '--i': '19', '--j': '2' }}>
-            <input required type="email" />
-            <label htmlFor="">Email</label>
+            <input name="email" required type="email" />
+            <label htmlFor="email">Email</label>
             <i className="bx bxs-envelope" />
           </div>
-          <div className="input-box animation" style={{ '--i': '20', '--j': '3' }}>
-            <input required type="password" />
-            <label htmlFor="">Password</label>
+          <div className="input-box animation" style={{ '--i': '19', '--j': '2' }}>
+            <input name="password" required type="password" />
+            <label htmlFor="password">Password</label>
             <i className="bx bxs-lock-alt" />
           </div>
           <button

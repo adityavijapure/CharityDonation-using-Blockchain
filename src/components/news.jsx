@@ -35,6 +35,7 @@ const AddNewsBlog = () => {
     try {
       let imageUrl = '';
   
+      // Handle image upload
       if (newsData.image) {
         const imageRef = ref(storage, `newsBlogs/${newsData.image.name}`);
         const uploadTask = uploadBytesResumable(imageRef, newsData.image);
@@ -42,7 +43,11 @@ const AddNewsBlog = () => {
         await new Promise((resolve, reject) => {
           uploadTask.on(
             'state_changed',
-            null,
+            (snapshot) => {
+              
+              const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              console.log(`Upload is ${progress}% done`);
+            },
             (error) => {
               reject(error);
             },
@@ -55,6 +60,7 @@ const AddNewsBlog = () => {
         imageUrl = await getDownloadURL(imageRef);
       }
   
+      // Store news blog data in Firestore
       await addDoc(collection(db, 'newsBlogs'), {
         title: newsData.title,
         description: newsData.description,
